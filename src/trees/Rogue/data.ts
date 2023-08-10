@@ -33,7 +33,10 @@ export const data: TalentData = {
         description: talentText`After killing a target that yields experience or honor, gives you a ${[
           20,
           40,
-        ]}% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, or Ghostly Strike. Lasts 20 sec.`,
+        ]}% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, or Ghostly Strike. Lasts ${[
+          20,
+          40,
+        ]} sec.`,
       },
       Malice: {
         name: "Malice",
@@ -72,16 +75,20 @@ export const data: TalentData = {
           2,
         ]}%.`,
       },
-      "Improved Slice and Dice": {
-        name: "Improved Slice and Dice",
+      "Improved Backstab": {
+        name: "Improved Backstab",
         pos: "b4",
-        icon: icons["ability_rogue_slicedice"],
+        icon: icons["ability_backstab"],
         maxRank: 3,
         reqPoints: 5,
-        description: talentText`Increases the duration of your Slice and Dice ability by ${[
-          15,
+        description: talentText`Increases the critical strike chance of your Backstab ability by ${[
+          10,
+          20,
           30,
-          45,
+        ]}% and Mutilate ability by ${[
+          5,
+          10,
+          15,
         ]}%.`,
       },
       "Relentless Strikes": {
@@ -111,7 +118,7 @@ export const data: TalentData = {
         reqPoints: 10,
         prereq: "Malice",
         arrows: [{ dir: "down", from: "a3", to: "c3" }],
-        description: talentText`Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, and Hemorrhage abilities by ${[
+        description: talentText`Increases the critical strike damage bonus of your Sinister Strike, Gouge, Backstab, Ghostly Strike, Hemorrhage and Mutilate abilities by ${[
           6,
           12,
           18,
@@ -119,18 +126,32 @@ export const data: TalentData = {
           30,
         ]}%.`,
       },
+      "Improved Poisons": {
+        name: "Improved Poisons",
+        pos: "c4",
+        icon: icons["ability_poisons"],
+        maxRank: 5,
+        reqPoints: 10,
+        description: talentText`Increases the chance to apply poisons to your target by ${[
+          5,
+          10,
+          15,
+          20,
+          25,
+        ]}%.`,
+      },
       "Vile Poisons": {
         name: "Vile Poisons",
         pos: "d2",
         icon: icons["ability_rogue_feigndeath"],
         maxRank: 5,
-        reqPoints: 15,
+        reqPoints: 10,
         description: talentText`Increases the damage dealt by your poisons by ${[
-          4,
-          8,
-          12,
-          16,
+          10,
           20,
+          30,
+          40,
+          50,
         ]}% and gives your poisons an additional ${[
           8,
           16,
@@ -139,19 +160,21 @@ export const data: TalentData = {
           40,
         ]}% chance to resist dispel effects.`,
       },
-      "Improved Poisons": {
-        name: "Improved Poisons",
+      "Poisonous Atmosphere": {
+        name: "Poisonous Atmosphere",
         pos: "d3",
-        icon: icons["ability_poisons"],
-        maxRank: 5,
-        reqPoints: 15,
-        description: talentText`Increases the chance to apply poisons to your target by ${[
+        icon: icons["spell_nature_abolishmagic"],
+        maxRank: 2,
+        reqPoints: 10,
+        prereq: "Vile Poisons",
+        arrows: [{ dir: "right", from: "d2", to: "d3" }],
+        description: talentText`Increases the Nature damage taken by any target you have poisoned by ${[
           2,
           4,
-          6,
-          8,
-          10,
-        ]}%.`,
+        ]} and gives all poisons ${[
+          2,
+          4,
+        ]}% per hit to create a cloud of poison in an 5 yard radius around the Rogue for 10 seconds.`,
       },
       "Cold Blood": {
         name: "Cold Blood",
@@ -159,11 +182,25 @@ export const data: TalentData = {
         icon: icons["spell_ice_lament"],
         maxRank: 1,
         reqPoints: 20,
-        description: talentText`When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, or Eviscerate by 100%.`,
+        description: talentText`When activated, increases the critical strike chance of your next Sinister Strike, Backstab, Ambush, Mutilate or Eviscerate by 100%.`,
+      },
+      "Toxic Courage": {
+        name: "Toxic Courage",
+        pos: "e3",
+        icon: icons["ability_rogue_deadlybrew"],
+        maxRank: 3,
+        reqPoints: 20,
+        prereq: "Cold Blood",
+        arrows: [{ dir: "right", from: "e2", to: "e3" }],
+        description: talentText`Each time when any your poison applied on target it reduces cooldown of Cold Blood ability for ${[
+          2,
+          4,
+          6,
+        ]} sec.`,
       },
       "Improved Kidney Shot": {
         name: "Improved Kidney Shot",
-        pos: "e3",
+        pos: "e1",
         icon: icons["ability_rogue_kidneyshot"],
         maxRank: 3,
         reqPoints: 20,
@@ -172,6 +209,16 @@ export const data: TalentData = {
           6,
           9,
         ]}% damage from all sources.`,
+      },
+      "Solar Plexus Shot": {
+        name: "Solar Plexus Shot",
+        pos: "f1",
+        icon: icons["ability_rogue_bloodsplatter"],
+        maxRank: 1,
+        reqPoints: 25,
+        prereq: "Improved Kidney Shot",
+        arrows: [{ dir: "down", from: "e1", to: "f1" }],
+        description: talentText`The impact on the Kidney Shot is shifted towards the solar fusion. Each time when you use Kidney Shot with 5 Combo Points you target additionally receives Garrote effect and refresh Expose Armor duration. Effect takes place even if target is immune to stun effects.`,
       },
       "Seal Fate": {
         name: "Seal Fate",
@@ -189,13 +236,41 @@ export const data: TalentData = {
           100,
         ]}% chance to add an additional combo point.`,
       },
+      "Master Poisoner": {
+        name: "Master Poisoner",
+        pos: "e4",
+        icon: icons["ability_creature_poison"],
+        maxRank: 3,
+        reqPoints: 20,
+        prereq: "Improved Poisons",
+        arrows: [{ dir: "down", from: "c4", to: "e4" }],
+        description: talentText`Each time when you apply poison to your target with ${[
+          33,
+          66,
+          100,
+        ]}% you additionally do an extra poison damage equal to Instant Poison VI and you have a ${[
+          33,
+          66,
+          100,
+        ]}% chance to reduce enemy poison resistance (immunity).`,
+      },
+      "Mutilate": {
+        name: "Mutilate",
+        pos: "f4",
+        icon: icons["ability_mutilate"],
+        maxRank: 1,
+        reqPoints: 25,
+        prereq: "Master Poisoner",
+        arrows: [{ dir: "down", from: "e4", to: "f4" }],
+        description: talentText`Instantly attacks the target with both daggers as normalized attacks. The target takes 10% more damage per your biggest stack of Deadly Poison. Awards 2 combo points.`,
+      },
       Vigor: {
         name: "Vigor",
         pos: "g2",
         icon: icons["spell_nature_earthbindtotem"],
         maxRank: 1,
         reqPoints: 30,
-        description: talentText`Increases your maximum Energy by 10.`,
+        description: talentText`Increases your maximum Energy by 20. Each time when you do poison damage you have 5% to restore 20 energy. Regain 3% of the total HP per second while the rogue is affected by crowd control.`,
       },
     },
   },
@@ -241,16 +316,16 @@ export const data: TalentData = {
           5,
         ]}%.`,
       },
-      "Improved Backstab": {
-        name: "Improved Backstab",
+      "Improved Dexterity": {
+        name: "Improved Dexterity",
         pos: "b1",
-        icon: icons["ability_backstab"],
+        icon: icons["ability_rogue_slicedice"],
         maxRank: 3,
         reqPoints: 5,
-        description: talentText`Increases the critical strike chance of your Backstab ability by ${[
-          10,
-          20,
+        description: talentText`Increases the duration of your Slice and Dice and Flourish abilities by ${[
+          15,
           30,
+          45,
         ]}%.`,
       },
       Deflection: {
@@ -281,6 +356,23 @@ export const data: TalentData = {
           5,
         ]}%.`,
       },
+      "Throwing Weapon Specialization": {
+        name: "Throwing Weapon Specialization",
+        pos: "b4",
+        icon: icons["inv_throwingknife"],
+        maxRank: 2,
+        reqPoints: 5,
+        description: talentText`Increases damage of Throw ability by ${[
+          50,
+          100,
+        ]}% and grants addition ${[
+          10,
+          20,
+        ]}% dodge bonus for 8 seconds when rogue throws weapon not being in combat. Deadly throw ability has ${[
+          50,
+          100,
+        ]}% chance to immobilize and silence target for 1 second.`,
+      },
       Endurance: {
         name: "Endurance",
         pos: "c1",
@@ -300,7 +392,7 @@ export const data: TalentData = {
         reqPoints: 10,
         prereq: "Deflection",
         arrows: [{ dir: "down", from: "b2", to: "c2" }],
-        description: talentText`A strike that becomes active after parrying an opponent's attack. This attack deals 150% weapon damage and disarms the target for 6 sec.`,
+        description: talentText`A strike that becomes active after parrying an opponent's attack. This attack deals 150% weapon damage and disarms the target for 6 sec. Ability generates additional threat.`,
       },
       "Improved Sprint": {
         name: "Improved Sprint",
@@ -311,7 +403,10 @@ export const data: TalentData = {
         description: talentText`Gives a ${[
           50,
           100,
-        ]}% chance to remove all movement impairing effects when you activate your Sprint ability.`,
+        ]}% chance to remove all movement impairing effects when you activate your Sprint ability and additional removes such effects each ${[
+          5,
+          3,
+        ]} seconds while sprint is active.`,
       },
       "Improved Kick": {
         name: "Improved Kick",
@@ -360,13 +455,19 @@ export const data: TalentData = {
         icon: icons["inv_mace_01"],
         maxRank: 5,
         reqPoints: 20,
-        description: talentText`Increases your skill with Maces by ${[
-          1,
-          2,
+        description: talentText`Increases the critical strike damage bonus of your attacks by ${[
           3,
-          4,
-          5,
-        ]}, and gives you a ${[
+          6,
+          9,
+          12,
+          15,
+        ]}%, causes your attacks to ignore ${[
+          30,
+          60,
+          90,
+          120,
+          150,
+        ]} of your target's Armor and gives you a ${[
           1,
           2,
           3,
@@ -374,13 +475,13 @@ export const data: TalentData = {
           5,
         ]}% chance to stun your target for 3 sec with a Mace.`,
       },
-      "Blade Flurry": {
+      "Improved Blade Flurry": {
         name: "Blade Flurry",
         pos: "e2",
         icon: icons["ability_warrior_punishingblow"],
         maxRank: 1,
         reqPoints: 20,
-        description: talentText`Increases your attack speed by 20%. In addition, attacks strike an additional nearby opponent. Lasts 15 sec.`,
+        description: talentText`Increases your attack speed by 20% while Blade Flurry is active.`,
       },
       "Sword Specialization": {
         name: "Sword Specialization",
@@ -402,13 +503,13 @@ export const data: TalentData = {
         icon: icons["inv_gauntlets_04"],
         maxRank: 5,
         reqPoints: 20,
-        description: talentText`Increases your chance to get a critical strike with Fist Weapons by ${[
-          1,
+        description: talentText`Gives your successful auto attack hits with Fist Weapons gives a ${[
           2,
-          3,
           4,
-          5,
-        ]}%.`,
+          6,
+          8,
+          10,
+        ]}% chance to generate 15 Energy.`,
       },
       "Weapon Expertise": {
         name: "Weapon Expertise",
@@ -416,9 +517,9 @@ export const data: TalentData = {
         icon: icons["spell_holy_blessingofstrength"],
         maxRank: 2,
         reqPoints: 25,
-        prereq: "Blade Flurry",
+        prereq: "Improved Blade Flurry",
         arrows: [{ dir: "down", from: "e2", to: "f2" }],
-        description: talentText`Increases your skill with Sword, Fist, and Dagger weapons by ${[
+        description: talentText`Increases your skill with Sword, Fist, Mace and Dagger weapons by ${[
           3,
           5,
         ]}%.`,
@@ -441,7 +542,7 @@ export const data: TalentData = {
         icon: icons["spell_shadow_shadowworddominate"],
         maxRank: 1,
         reqPoints: 30,
-        description: talentText`Increases your Energy regeneration rate by 100% for 15 sec.`,
+        description: talentText`Increases your Energy regeneration rate by 100% and grants immune to fear, charm and any stun effects for 15 sec.`,
       },
     },
   },
@@ -450,19 +551,47 @@ export const data: TalentData = {
     background: backgrounds["subtlety"],
     icon: icons["ability_stealth"],
     talents: {
-      "Master of Deception": {
-        name: "Master of Deception",
-        pos: "a2",
-        icon: icons["spell_shadow_charm"],
-        maxRank: 5,
+    "Improved Sap": {
+        name: "Improved Sap",
+        pos: "a1",
+        icon: icons["ability_sap"],
+        maxRank: 2,
         reqPoints: 0,
-        description: talentText`Reduces the chance enemies have to detect you while in Stealth mode.${[
-          "",
-          " More effective than Master of Deception (Rank 1)",
-          " More effective than Master of Deception (Rank 2)",
-          " More effective than Master of Deception (Rank 3)",
-          " More effective than Master of Deception (Rank 4)",
-        ]}.`,
+        description: talentText`Reduces the Energy cost of your Sap ability by ${[
+          10,
+          20,
+        ]} and gives you a ${[
+          50,
+          100,
+        ]}% chance to return to stealth mode after using your Sap ability.`,
+      },
+//       "Master of Deception": {
+//         name: "Master of Deception",
+//         pos: "a2",
+//         icon: icons["spell_shadow_charm"],
+//         maxRank: 3,
+//         reqPoints: 0,
+//         description: talentText`Reduces the chance enemies have to detect you while in Stealth mode.${[
+//           " (Increase your effective stealth level +2)",
+//           " (Increase your effective stealth level +4)",
+//           " (Increase your effective stealth level +5)",
+//         ]}.`,
+//       },
+      "Improved Flourish": {
+        name: "Improved Flourish",
+        pos: "a2",
+        icon: icons["ability_whirlwind"],
+        maxRank: 3,
+        reqPoints: 0,
+        description: talentText`Reduce cooldown of Flourish ability by ${[
+          7,
+          14,
+          20,
+        ]} seconds and reduces the duration of any stun effects on rogue by ${[
+          10,
+          20,
+          30,
+        ]}% while Flourish is active.`,
       },
       Opportunity: {
         name: "Opportunity",
@@ -490,19 +619,12 @@ export const data: TalentData = {
         ]}% and increases the threat reduction of your Feint ability by ${[
           10,
           20,
-        ]}%.`,
+        ]}%. Also successfully using the Feint ability after a 10-second delay grants the rogue a second wind, resulting in the generation of ${[
+          15,
+          30,
+        ]} energy.`,
       },
-      Elusiveness: {
-        name: "Elusiveness",
-        pos: "b2",
-        icon: icons["spell_magic_lesserinvisibilty"],
-        maxRank: 2,
-        reqPoints: 5,
-        description: talentText`Reduces the cooldown of your Vanish and Blind abilities by ${[
-          "45 sec",
-          "1.5 min",
-        ]}.`,
-      },
+
       Camouflage: {
         name: "Camouflage",
         pos: "b3",
@@ -521,7 +643,35 @@ export const data: TalentData = {
           3,
           4,
           5,
-        ]} sec.`,
+        ]} sec and reduces the chance enemies have to detect you while in Stealth mode ${[
+          " (Increase your effective stealth level +1)",
+          " (Increase your effective stealth level +2)",
+          " (Increase your effective stealth level +3)",
+          " (Increase your effective stealth level +4)",
+          " (Increase your effective stealth level +5)",
+        ]}.`,
+      },
+      "Glancing Blow Defense": {
+        name: "Glancing Blow Defense",
+        pos: "b2",
+        icon: icons["spell_nature_enchantarmor"],
+        maxRank: 5,
+        reqPoints: 5,
+        prereq: "Improved Flourish",
+        arrows: [{ dir: "down", from: "a2", to: "b2" }],
+        description: talentText`While under the effects of Flourish, the rogue applies technique of glancing blow defense, resulting in lowered damage taken determined by their avoidance factors (the combined values of dodge, parry and reduced chance to be hit). This state grants {${[
+          8,
+          16,
+          24,
+          32,
+          40,
+        ]}% * avoidance score} reduction in magical damage and {${[
+          13,
+          26,
+          39,
+          52,
+          65,
+        ]}% * avoidance score} reduction in physical damage.`,
       },
       Initiative: {
         name: "Initiative",
@@ -530,9 +680,9 @@ export const data: TalentData = {
         maxRank: 3,
         reqPoints: 10,
         description: talentText`Gives you a ${[
-          25,
-          50,
-          75,
+          33,
+          66,
+          100,
         ]}% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.`,
       },
       "Ghostly Strike": {
@@ -541,18 +691,44 @@ export const data: TalentData = {
         icon: icons["spell_shadow_curse"],
         maxRank: 1,
         reqPoints: 10,
-        description: talentText`A strike that deals 125% weapon damage and increases your chance to dodge by 15% for 7 sec. Awards 1 combo point.`,
+        description: talentText`A strike that deals 125% (190% when dagger equipped) weapon damage and increases your chance to dodge, fully resist enemy spell or avoid ranged attack by 15% for 7 sec. Awards 1 combo point.`,
       },
       "Improved Ambush": {
         name: "Improved Ambush",
         pos: "c3",
         icon: icons["ability_rogue_ambush"],
-        maxRank: 3,
+        maxRank: 2,
         reqPoints: 10,
         description: talentText`Increases the critical strike chance of your Ambush ability by ${[
+          25,
+          50,
+        ]}%.`,
+      },
+      "Shadow Proficiency": {
+        name: "Shadow Proficiency",
+        pos: "c4",
+        icon: icons["ability_rogue_shadowstrike"],
+        maxRank: 1,
+        reqPoints: 10,
+        prereq: "Improved Ambush",
+        arrows: [{ dir: "right", from: "c3", to: "c4" }],
+        description: talentText`Your Ambush Strike ignores enemy armor and deals shadow damage.`,
+      },
+      Elusiveness: {
+        name: "Elusiveness",
+        pos: "d2",
+        icon: icons["spell_magic_lesserinvisibilty"],
+        maxRank: 2,
+        reqPoints: 15,
+        description: talentText`Reduces the cooldown of your Vanish and Blind abilities by ${[
+          "45 sec",
+          "1.5 min",
+        ]}. Active Evasion ability also reduces the chance you are hit by ranged attacks by ${[
+          25,
+          50,
+        ]}% and incoming spell damage is reduced by ${[
           15,
           30,
-          45,
         ]}%.`,
       },
       Setup: {
@@ -562,22 +738,10 @@ export const data: TalentData = {
         maxRank: 3,
         reqPoints: 15,
         description: talentText`Gives you a ${[
-          15,
-          30,
-          45,
-        ]}% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells.`,
-      },
-      "Improved Sap": {
-        name: "Improved Sap",
-        pos: "d2",
-        icon: icons["ability_sap"],
-        maxRank: 3,
-        reqPoints: 15,
-        description: talentText`Gives you a ${[
-          30,
-          60,
-          90,
-        ]}% chance to return to stealth mode after using your Sap ability.`,
+          33,
+          66,
+          100,
+        ]}% chance to add a combo point to your target after dodging their attack or fully resisting one of their spells. Each proc reduces cooldown of Ghostly Strike ability by 1 sec. This effect cannot occur more than once per second.`,
       },
       "Serrated Blades": {
         name: "Serrated Blades",
@@ -600,7 +764,7 @@ export const data: TalentData = {
         description: talentText`Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by ${[
           2,
           4,
-        ]}.${["", " More effective than Heightened Senses (Rank 1)."]}`,
+        ]}.${["", " More effective than Heightened Senses (Rank 1)."]}.`,
       },
       Preparation: {
         name: "Preparation",
@@ -632,7 +796,7 @@ export const data: TalentData = {
           { dir: "right-down", from: "d3", to: "d4" },
           { dir: "right-down-down", from: "d4", to: "e4" },
         ],
-        description: talentText`An instant strike that damages the opponent and causes the target to hemmorhage, increasing any Physical damage dealt to the target by up to 3. Lasts 30 charges or 15 sec. Awards 1 combo point.`,
+        description: talentText`An instant strike that damages the opponent (+55% when dagger equipped) and causes the target to hemorrhage, increasing any bleed damage dealt to the target by 20%. Lasts 30 charges or 15 sec. Awards 1 combo point.`,
       },
       Deadliness: {
         name: "Deadliness",
@@ -646,6 +810,30 @@ export const data: TalentData = {
           6,
           8,
           10,
+        ]}% and ${[
+          20,
+          40,
+          60,
+          80,
+          100,
+        ]}% to get combo point each time when enemies get damage from your Rupture ability.`,
+      },
+      "Slaughter from the Shadows": {
+        name: "Slaughter from the Shadows",
+        pos: "f4",
+        icon: icons["ability_rogue_slaughterfromtheshadows"],
+        maxRank: 3,
+        reqPoints: 25,
+        prereq: "Deadliness",
+        arrows: [{ dir: "right", from: "f3", to: "f4" }],
+        description: talentText`Reduces the energy cost of your Backstab and Ambush abilities by ${[
+          5,
+          10,
+          15,
+        ]} energy and increases Hemorrhage bonus bleed damage done by ${[
+          10,
+          20,
+          30,
         ]}%.`,
       },
       Premeditation: {
@@ -654,7 +842,9 @@ export const data: TalentData = {
         icon: icons["spell_shadow_possession"],
         maxRank: 1,
         reqPoints: 30,
-        description: talentText`When used, adds 2 combo points to your target. You must add to or use those combo points within 10 sec or the combo points are lost.`,
+        prereq: "Preparation",
+        arrows: [{ dir: "down", from: "e2", to: "g2" }],
+        description: talentText`Ability with 30 seconds cooldown which adds 2 combo points to your target. You must add to or use those combo points within 10 sec or the combo points are lost. Each successful Backstab or Ambush hit reduces Vanish cooldown for 30 seconds.`,
       },
     },
   },
