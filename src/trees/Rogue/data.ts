@@ -174,7 +174,7 @@ export const data: TalentData = {
         ]} and gives all poisons ${[
           2,
           4,
-        ]}% per hit to create a cloud of poison in an 5 yard radius around the Rogue for 10 seconds.`,
+        ]}% per hit to create a cloud of poison in an 5 yard radius around the rogue for 10 seconds.`,
       },
       "Cold Blood": {
         name: "Cold Blood",
@@ -210,7 +210,7 @@ export const data: TalentData = {
           9,
         ]}% damage from all sources.`,
       },
-      "Solar Plexus Shot": {
+      "Solar Plexus Impact": {
         name: "Solar Plexus Shot",
         pos: "f1",
         icon: icons["ability_rogue_bloodsplatter"],
@@ -218,7 +218,7 @@ export const data: TalentData = {
         reqPoints: 25,
         prereq: "Improved Kidney Shot",
         arrows: [{ dir: "down", from: "e1", to: "f1" }],
-        description: talentText`The impact on the Kidney Shot is shifted towards the solar fusion. Each time when you use Kidney Shot with 5 Combo Points you target additionally receives Garrote effect and refresh Expose Armor duration. Effect takes place even if target is immune to stun effects.`,
+        description: talentText`The energy of the Kidney Shot strike reaches the solar plexus. Each time you use Kidney Shot you have 20% per Combo Points to apply Garrote effect and refresh Expose Armor duration. Effect takes place even if target is immune to stun effects.`,
       },
       "Seal Fate": {
         name: "Seal Fate",
@@ -403,10 +403,10 @@ export const data: TalentData = {
         description: talentText`Gives a ${[
           50,
           100,
-        ]}% chance to remove all movement impairing effects when you activate your Sprint ability and additional removes such effects each ${[
-          5,
-          3,
-        ]} seconds while sprint is active.`,
+        ]}% chance to remove all movement impairing effects when you activate your Sprint ability and additional ${[
+          50,
+          100,
+        ]}% to remove such effects each next 5 seconds while sprint is active.`,
       },
       "Improved Kick": {
         name: "Improved Kick",
@@ -772,7 +772,7 @@ export const data: TalentData = {
         icon: icons["spell_shadow_antishadow"],
         maxRank: 1,
         reqPoints: 20,
-        description: talentText`When activated, this ability immediately finishes the cooldown on your other Rogue abilities.`,
+        description: talentText`When activated, this ability immediately finishes the cooldown on your other rogue abilities.`,
       },
       "Dirty Deeds": {
         name: "Dirty Deeds",
