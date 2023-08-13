@@ -130,14 +130,12 @@ export const data: TalentData = {
         name: "Improved Poisons",
         pos: "c4",
         icon: icons["ability_poisons"],
-        maxRank: 5,
+        maxRank: 3,
         reqPoints: 10,
         description: talentText`Increases the chance to apply poisons to your target by ${[
-          5,
-          10,
-          15,
+          7,
+          14,
           20,
-          25,
         ]}%.`,
       },
       "Vile Poisons": {
@@ -214,11 +212,14 @@ export const data: TalentData = {
         name: "Solar Plexus Shot",
         pos: "f1",
         icon: icons["ability_rogue_bloodsplatter"],
-        maxRank: 1,
+        maxRank: 2,
         reqPoints: 25,
         prereq: "Improved Kidney Shot",
         arrows: [{ dir: "down", from: "e1", to: "f1" }],
-        description: talentText`The energy of the Kidney Shot strike reaches the solar plexus. Each time you use Kidney Shot you have 20% per Combo Points to apply Garrote effect and refresh Expose Armor duration. Effect takes place even if target is immune to stun effects.`,
+        description: talentText`The energy of the Kidney Shot strike reaches the solar plexus. Each time you use Kidney Shot ability you have ${[
+          50,
+          100,
+        ]}% to apply Garrote effect and refresh Expose Armor duration. Additional effects take place even if target is immune to stun effects.`,
       },
       "Seal Fate": {
         name: "Seal Fate",
@@ -248,11 +249,7 @@ export const data: TalentData = {
           33,
           66,
           100,
-        ]}% you additionally do an extra poison damage equal to Instant Poison VI and you have a ${[
-          33,
-          66,
-          100,
-        ]}% chance to reduce enemy poison resistance (immunity).`,
+        ]}% you additionally do an extra Chaos Poison damage {attack power * 0.2} which ignore any resistance or immune.`,
       },
       "Mutilate": {
         name: "Mutilate",
@@ -406,7 +403,7 @@ export const data: TalentData = {
         ]}% chance to remove all movement impairing effects when you activate your Sprint ability and additional ${[
           50,
           100,
-        ]}% to remove such effects each next 5 seconds while sprint is active.`,
+        ]}% to remove such effects each ne 5 seconds while sprint is active.`,
       },
       "Improved Kick": {
         name: "Improved Kick",
