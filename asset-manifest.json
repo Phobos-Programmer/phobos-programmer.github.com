@@ -6,10 +6,10 @@
     "main.css": "/classic-talent-calculator/static/css/main.6210186d.chunk.css",
     "main.js": "/classic-talent-calculator/static/js/main.6c380e6b.chunk.js",
     "main.js.map": "/classic-talent-calculator/static/js/main.6c380e6b.chunk.js.map",
-    "runtime-main.js": "/classic-talent-calculator/static/js/runtime-main.23628d14.js",
-    "runtime-main.js.map": "/classic-talent-calculator/static/js/runtime-main.23628d14.js.map",
-    "static/js/3.3ba442b5.chunk.js": "/classic-talent-calculator/static/js/3.3ba442b5.chunk.js",
-    "static/js/3.3ba442b5.chunk.js.map": "/classic-talent-calculator/static/js/3.3ba442b5.chunk.js.map",
+    "runtime-main.js": "/classic-talent-calculator/static/js/runtime-main.f8974c7c.js",
+    "runtime-main.js.map": "/classic-talent-calculator/static/js/runtime-main.f8974c7c.js.map",
+    "static/js/3.9cfca042.chunk.js": "/classic-talent-calculator/static/js/3.9cfca042.chunk.js",
+    "static/js/3.9cfca042.chunk.js.map": "/classic-talent-calculator/static/js/3.9cfca042.chunk.js.map",
     "static/js/4.8ea8ad0e.chunk.js": "/classic-talent-calculator/static/js/4.8ea8ad0e.chunk.js",
     "static/js/4.8ea8ad0e.chunk.js.map": "/classic-talent-calculator/static/js/4.8ea8ad0e.chunk.js.map",
     "static/js/5.7d7e1347.chunk.js": "/classic-talent-calculator/static/js/5.7d7e1347.chunk.js",
@@ -58,7 +58,7 @@
     "static/media/survival.jpg": "/classic-talent-calculator/static/media/survival.e2669ebf.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.23628d14.js",
+    "static/js/runtime-main.f8974c7c.js",
     "static/js/12.bd59c20b.chunk.js",
     "static/css/main.6210186d.chunk.css",
     "static/js/main.6c380e6b.chunk.js"
