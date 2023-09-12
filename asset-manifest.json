@@ -1,13 +1,13 @@
 {
   "files": {
     "static/css/0.b8119160.chunk.css": "/classic-talent-calculator/static/css/0.b8119160.chunk.css",
-    "static/js/0.e0a6d222.chunk.js": "/classic-talent-calculator/static/js/0.e0a6d222.chunk.js",
-    "static/js/0.e0a6d222.chunk.js.map": "/classic-talent-calculator/static/js/0.e0a6d222.chunk.js.map",
+    "static/js/0.41bd0676.chunk.js": "/classic-talent-calculator/static/js/0.41bd0676.chunk.js",
+    "static/js/0.41bd0676.chunk.js.map": "/classic-talent-calculator/static/js/0.41bd0676.chunk.js.map",
     "main.css": "/classic-talent-calculator/static/css/main.6210186d.chunk.css",
-    "main.js": "/classic-talent-calculator/static/js/main.1b9eb8ef.chunk.js",
-    "main.js.map": "/classic-talent-calculator/static/js/main.1b9eb8ef.chunk.js.map",
-    "runtime-main.js": "/classic-talent-calculator/static/js/runtime-main.fb122c64.js",
-    "runtime-main.js.map": "/classic-talent-calculator/static/js/runtime-main.fb122c64.js.map",
+    "main.js": "/classic-talent-calculator/static/js/main.914ed688.chunk.js",
+    "main.js.map": "/classic-talent-calculator/static/js/main.914ed688.chunk.js.map",
+    "runtime-main.js": "/classic-talent-calculator/static/js/runtime-main.fd320bf4.js",
+    "runtime-main.js.map": "/classic-talent-calculator/static/js/runtime-main.fd320bf4.js.map",
     "static/js/3.e432f2d5.chunk.js": "/classic-talent-calculator/static/js/3.e432f2d5.chunk.js",
     "static/js/3.e432f2d5.chunk.js.map": "/classic-talent-calculator/static/js/3.e432f2d5.chunk.js.map",
     "static/js/4.8ea8ad0e.chunk.js": "/classic-talent-calculator/static/js/4.8ea8ad0e.chunk.js",
@@ -58,9 +58,9 @@
     "static/media/survival.jpg": "/classic-talent-calculator/static/media/survival.e2669ebf.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.fb122c64.js",
+    "static/js/runtime-main.fd320bf4.js",
     "static/js/12.e2fcb3d6.chunk.js",
     "static/css/main.6210186d.chunk.css",
-    "static/js/main.1b9eb8ef.chunk.js"
+    "static/js/main.914ed688.chunk.js"
   ]
 }
