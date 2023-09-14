@@ -1,15 +1,15 @@
 {
   "files": {
     "static/css/0.6b2f2820.chunk.css": "/classic-talent-calculator/static/css/0.6b2f2820.chunk.css",
-    "static/js/0.a3222eb0.chunk.js": "/classic-talent-calculator/static/js/0.a3222eb0.chunk.js",
-    "static/js/0.a3222eb0.chunk.js.map": "/classic-talent-calculator/static/js/0.a3222eb0.chunk.js.map",
+    "static/js/0.67d566bf.chunk.js": "/classic-talent-calculator/static/js/0.67d566bf.chunk.js",
+    "static/js/0.67d566bf.chunk.js.map": "/classic-talent-calculator/static/js/0.67d566bf.chunk.js.map",
     "main.css": "/classic-talent-calculator/static/css/main.6210186d.chunk.css",
     "main.js": "/classic-talent-calculator/static/js/main.914ed688.chunk.js",
     "main.js.map": "/classic-talent-calculator/static/js/main.914ed688.chunk.js.map",
-    "runtime-main.js": "/classic-talent-calculator/static/js/runtime-main.8098a518.js",
-    "runtime-main.js.map": "/classic-talent-calculator/static/js/runtime-main.8098a518.js.map",
-    "static/js/3.db4397a0.chunk.js": "/classic-talent-calculator/static/js/3.db4397a0.chunk.js",
-    "static/js/3.db4397a0.chunk.js.map": "/classic-talent-calculator/static/js/3.db4397a0.chunk.js.map",
+    "runtime-main.js": "/classic-talent-calculator/static/js/runtime-main.a6abb54c.js",
+    "runtime-main.js.map": "/classic-talent-calculator/static/js/runtime-main.a6abb54c.js.map",
+    "static/js/3.e01d7354.chunk.js": "/classic-talent-calculator/static/js/3.e01d7354.chunk.js",
+    "static/js/3.e01d7354.chunk.js.map": "/classic-talent-calculator/static/js/3.e01d7354.chunk.js.map",
     "static/js/4.8ea8ad0e.chunk.js": "/classic-talent-calculator/static/js/4.8ea8ad0e.chunk.js",
     "static/js/4.8ea8ad0e.chunk.js.map": "/classic-talent-calculator/static/js/4.8ea8ad0e.chunk.js.map",
     "static/js/5.7d7e1347.chunk.js": "/classic-talent-calculator/static/js/5.7d7e1347.chunk.js",
@@ -58,7 +58,7 @@
     "static/media/survival.jpg": "/classic-talent-calculator/static/media/survival.e2669ebf.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.8098a518.js",
+    "static/js/runtime-main.a6abb54c.js",
     "static/js/12.e2fcb3d6.chunk.js",
     "static/css/main.6210186d.chunk.css",
     "static/js/main.914ed688.chunk.js"
